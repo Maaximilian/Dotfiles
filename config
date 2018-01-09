@@ -1,0 +1,153 @@
+ _ __  ___  __ __   __ __    _,  _ __ 
+( /  )/  ()( /( /  /( /  )  / | ( /  )
+ /--'/   /  /  (__/  /--<  /--|  /--< 
+/   (___/ (/___/_/_ /___/_/   |_/   \_
+               //                     
+              (/
+
+[colors]
+bg = #292426
+fg = #E0D9C3
+transparent = #00000000
+bat0 = #33E0D9C3
+bat1 = #66E0D9C3
+bat2 = #99E0D9C3
+bat3 = #CCE0D9C3
+bat4 = #FFE0D9C3
+
+[bar/bar]
+width = 100%
+height = 52
+radius = 4
+override-redirect = false
+
+background = ${colors.bg}
+foreground = ${colors.fg}
+
+border-left-size = 768
+border-top-size = 50
+border-right-size = 768
+border-bottom-size = 0
+border-color = ${colors.transparent}
+
+padding-left = 1
+padding-right = 2
+module-margin = 1
+
+font-0 = InconsolataFor Nerd Font:pixelsize=18;4
+font-1 = InconsolataFor Nerd Font:pixelsize=12;4
+font-2 = InconsolataFor Nerd Font:pixelsize=14;4
+
+modules-left = i3
+modules-center = date
+modules-right = battery
+
+tray-position = right
+tray-padding = 1
+
+# MODULES
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+; Default
+label-mode = ""
+label-mode-font = 2
+label-mode-padding = 1
+label-mode-background = ${colors.bg}
+
+; Focused
+label-focused = ""
+label-focused-font = 2
+label-focused-foreground = ${colors.fg}
+label-focused-background = ${colors.bg}
+label-focused-underline = ${colors.transparent}
+label-focused-padding = 1
+
+; Unfocused
+label-unfocused = ""
+label-unfocused-font = 2
+label-unfocused-padding = 1
+label-unfocused-foreground = ${colors.fg}
+
+; Visible
+label-visible = ""
+label-visible-font = 2
+label-visible-underline = ${colors.transparent}
+label-visible-padding = 1
+
+; Urgent
+label-urgent = ""
+label-urgent-font = 2
+label-urgen-foreground = ${colors.fg}
+label-urgent-background = ${colors.bg}
+label-urgent-padding = 1
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = "%A %d %B"
+time = "%H:%M"
+
+format-prefix-foreground = ${colors.fg}
+label-foreground = ${colors.fg}
+label = %date% %time%
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = ADP1
+full-at = 98
+
+format-charging = <animation-charging> <label-charging>
+format-charging-underline = ${colors.transparent}
+label-charging.foreground = ${colors.fg}
+label-charging-font = 3
+label-charging-prefix-font = 3
+
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-underline = ${colors.transparent}
+label-discharging-foreground = ${colors.fg}
+label-discharging-font = 3
+label-discharging-prefix-font = 3
+
+format-full-prefix = " "
+format-full-prefix-foreground = ${colors.fg}
+format-full-underline = ${colors.transparent}
+label-full-foreground = ${colors.fg}
+label-full-font = 3
+label-full-prefix-font = 3
+
+ramp-capacity-0 =  " "
+ramp-capacity-1 =  " "
+ramp-capacity-2 =  " "
+ramp-capacity-3 =  " "
+ramp-capacity-4 =  " "
+ramp-capacity-0-foreground = ${colors.bat0}
+ramp-capacity-1-foreground = ${colors.bat1}
+ramp-capacity-2-foreground = ${colors.bat2}
+ramp-capacity-3-foreground = ${colors.bat3}
+ramp-capacity-4-foreground = ${colors.bat4}
+
+animation-charging-0 =  " " 
+animation-charging-1 =  " "
+animation-charging-2 =  " "
+animation-charging-3 =  " "
+animation-charging-4 =  " "
+animation-charging-0-foreground = ${colors.bat0}
+animation-charging-1-foreground = ${colors.bat1}
+animation-charging-2-foreground = ${colors.bat2}
+animation-charging-3-foreground = ${colors.bat3}
+animation-charging-4-foreground = ${colors.bat4}
+animation-charging-framerate = 450
+
+
+# GOLBAL
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
